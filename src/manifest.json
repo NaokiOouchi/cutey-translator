@@ -1,0 +1,33 @@
+{
+  "name": "Cutey-translator",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Cutey translator in GoogleChrome Extension.",
+  "permissions": [
+    "storage",
+    "background",
+    "contextMenus",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "matches": [
+      "https://twitter.com/*"
+    ],
+    "scripts": [
+      "background.js"
+    ],
+    "web_accessible_resources": [
+      "resources/chikuchiku-dictionary.json"
+    ]
+  }
+}
